@@ -33,17 +33,16 @@ namespace The_OOP_Hotel_part_two
             Console.WriteLine($"{Name} is having a workshop in the field of {Expertise}");
         }
 
-        public TimeSpan ExtendContract(TimeSpan extension) // metod för att förlänga kontraktet
+        public void ExtendContract(TimeSpan extension) // metod för att förlänga kontraktet
         {
             ContractDuration += extension; // lägg till förläningingen (kontrakt) på den nuvarande kontraktstiden
-            return ContractDuration; // returnera den uppdaterade kontraktstiden
+            int daysOfContract = ContractDuration.Days;
+            Console.WriteLine($"The contract has been extended to {daysOfContract} days.");
         }
 
-        public decimal LogBillableHours(decimal hours) // metod för att logga timmar och uppdatera lönen
+        public void LogBillableHours(decimal hours) // metod för att logga timmar och uppdatera lönen
         {
             BillableHours += hours; // lägg till timmar på timmarna som redan är loggade
-            _salary = BillableHours * HourlyRate; // uppdatera lönen baserat på de totala timmarna
-            return _salary; // returnera den uppdetarade lönen
         }
 
 
