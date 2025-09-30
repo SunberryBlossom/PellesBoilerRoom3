@@ -48,8 +48,20 @@ namespace The_OOP_Hotel_part_two
             double years = totalDays / 365.25;
 
             Console.WriteLine($"{Name} has been working here for a total of {totalDays} days.\nThat's a total of {years:F1} years. Wow!");
-           
-           
+        }
+
+        public void ChangeEmployeeId(string newId)
+        {
+            Console.WriteLine($"The Id of {Name} was changed from {EmployeeId} to {newId}");
+            EmployeeId = newId;
+        }
+
+        public void UpdateContactInfo(string phone, string email, string address)
+        {
+            PhoneNumber = phone;
+            Email = email;
+            Address = address;
+            Console.WriteLine($"You have now updated your phone number to {PhoneNumber}.\n Your Email to {Email}.\nYour address to {Address}.");
         }
     }
 }
