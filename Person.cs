@@ -39,15 +39,17 @@ namespace The_OOP_Hotel_part_two
         {
             Salary = newSalary;
         }
-        public (int Years, int Months, int Days) CalculateYearsOfService()
+        public void CalculateYearsOfService()
         {
             DateTime today = DateTime.Today;
-            //beräkning inte färdig 
-            int years = today.Year - StartDate.Year;
-            int months = today.Month - StartDate.Month;
-            int days = today.Day - StartDate.Day;
 
-            return (years, months, days);
+            TimeSpan timeOfService = today.Subtract(StartDate);
+            double totalDays = timeOfService.TotalDays;
+            double years = totalDays / 365.25;
+
+            Console.WriteLine($"{Name} has been working here for a total of {totalDays} days.\nThat's a total of {years:F1} years. Wow!");
+           
+           
         }
     }
 }
